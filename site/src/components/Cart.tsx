@@ -20,23 +20,20 @@ const Cart: React.FC = () => {
   return (
     <div className="relative" ref={dropdownRef}>
       <button
-        className="flex items-center text-white hover:text-gray-300 transition-colors"
+        className="cart-button"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="购物车"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
+        <svg 
+          className="cart-icon"
+          xmlns="http://www.w3.org/2000/svg" 
+          width="24" 
+          height="24" 
           viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth="2"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-          />
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
         </svg>
         {totalItems > 0 && (
           <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
@@ -46,7 +43,7 @@ const Cart: React.FC = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl z-50">
+        <div className="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl z-50" style={{ color: 'black' }}>
           <div className="p-4">
             <h3 className="text-lg font-semibold mb-4">购物车</h3>
             {items.length === 0 ? (
@@ -62,20 +59,20 @@ const Cart: React.FC = () => {
                       </div>
                       <div className="flex items-center space-x-2">
                         <button
-                          className="text-gray-500 hover:text-gray-700 w-6 h-6 flex items-center justify-center"
+                          className="text-gray-500 hover:text-gray-700 w-8 h-8 flex items-center justify-center rounded border"
                           onClick={() => updateQuantity(item.id, Math.max(0, item.quantity - 1))}
                         >
                           -
                         </button>
                         <span className="w-8 text-center">{item.quantity}</span>
                         <button
-                          className="text-gray-500 hover:text-gray-700 w-6 h-6 flex items-center justify-center"
+                          className="text-gray-500 hover:text-gray-700 w-8 h-8 flex items-center justify-center rounded border"
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
                         >
                           +
                         </button>
                         <button
-                          className="text-red-500 hover:text-red-700 ml-2 w-6 h-6 flex items-center justify-center"
+                          className="text-red-500 hover:text-red-700 w-8 h-8 flex items-center justify-center rounded border border-red-500"
                           onClick={() => removeFromCart(item.id)}
                         >
                           ×
