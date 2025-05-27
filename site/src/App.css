@@ -256,11 +256,11 @@
 .cart-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #000000;
+  color: #D4AF37;
   padding: 16px;
   border-bottom: 2px solid #D4AF37;
   margin-bottom: 0;
-  background-color: rgba(212, 175, 55, 0.1);
+  background-color: white;
 }
 
 .cart-empty {
