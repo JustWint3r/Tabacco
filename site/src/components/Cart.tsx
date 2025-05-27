@@ -43,36 +43,36 @@ const Cart: React.FC = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl z-50" style={{ color: 'black' }}>
-          <div className="p-4">
-            <h3 className="text-lg font-semibold mb-4">购物车</h3>
+        <div className="cart-dropdown">
+          <div className="cart-content">
+            <h3 className="cart-title">购物车</h3>
             {items.length === 0 ? (
-              <p className="text-gray-500">购物车是空的</p>
+              <p className="cart-empty">购物车是空的</p>
             ) : (
               <>
-                <div className="space-y-4">
+                <div className="cart-items">
                   {items.map((item) => (
-                    <div key={item.id} className="flex items-center justify-between">
-                      <div className="flex-1">
-                        <h4 className="font-medium">{item.name}</h4>
-                        <p className="text-gray-600">{item.price} × {item.quantity}</p>
+                    <div key={item.id} className="cart-item">
+                      <div className="cart-item-info">
+                        <h4 className="cart-item-name">{item.name}</h4>
+                        <p className="cart-item-price">{item.price} × {item.quantity}</p>
                       </div>
-                      <div className="flex items-center space-x-2">
+                      <div className="cart-item-actions">
                         <button
-                          className="text-gray-500 hover:text-gray-700 w-8 h-8 flex items-center justify-center rounded border"
+                          className="cart-quantity-btn"
                           onClick={() => updateQuantity(item.id, Math.max(0, item.quantity - 1))}
                         >
                           -
                         </button>
-                        <span className="w-8 text-center">{item.quantity}</span>
+                        <span className="cart-quantity">{item.quantity}</span>
                         <button
-                          className="text-gray-500 hover:text-gray-700 w-8 h-8 flex items-center justify-center rounded border"
+                          className="cart-quantity-btn"
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
                         >
                           +
                         </button>
                         <button
-                          className="text-red-500 hover:text-red-700 w-8 h-8 flex items-center justify-center rounded border border-red-500"
+                          className="cart-remove-btn"
                           onClick={() => removeFromCart(item.id)}
                         >
                           ×
@@ -81,13 +81,13 @@ const Cart: React.FC = () => {
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 pt-4 border-t">
-                  <div className="flex justify-between font-semibold">
+                <div className="cart-footer">
+                  <div className="cart-total">
                     <span>总计:</span>
                     <span>¥{totalPrice.toFixed(2)}</span>
                   </div>
                   <button
-                    className="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                    className="cart-checkout-btn"
                     onClick={() => {
                       alert('即将跳转到结账页面');
                     }}
