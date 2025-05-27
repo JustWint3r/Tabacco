@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../assets/images/logo.png';
+import Cart from './Cart';
 
 const Header: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const Header: React.FC = () => {
           <div className="logo">
             <img src={logo} alt="Tobacco Shop Logo" style={{ height: '60px' }} />
           </div>
-          <nav>
+          <nav className="flex items-center">
             <ul className="nav-menu">
               <li><a href="#products">商店</a></li>
               <li><a href="#hand-roll">手卷</a></li>
@@ -19,6 +20,9 @@ const Header: React.FC = () => {
               <li><a href="#finished">成品</a></li>
               <li><a href="#contact">联系我们</a></li>
             </ul>
+            <div className="ml-4">
+              <Cart />
+            </div>
           </nav>
         </div>
       </div>
