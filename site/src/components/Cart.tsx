@@ -36,7 +36,7 @@ const Cart: React.FC = () => {
           <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
         </svg>
         {totalItems > 0 && (
-          <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+          <span className="cart-badge">
             {totalItems}
           </span>
         )}
@@ -53,27 +53,38 @@ const Cart: React.FC = () => {
                 <div className="cart-items">
                   {items.map((item) => (
                     <div key={item.id} className="cart-item">
-                      <div className="cart-item-info">
+                      <div className="cart-item-image">
+                        <img src={item.image} alt={item.name} />
+                      </div>
+                      <div className="cart-item-details">
                         <h4 className="cart-item-name">{item.name}</h4>
-                        <p className="cart-item-price">{item.price} × {item.quantity}</p>
+                        <div className="cart-item-pricing">
+                          <p className="cart-item-base-price">单价: {item.price}</p>
+                          <p className="cart-item-total-price">
+                            小计: ¥{(item.numericPrice * item.quantity).toFixed(2)}
+                          </p>
+                        </div>
                       </div>
                       <div className="cart-item-actions">
-                        <button
-                          className="cart-quantity-btn"
-                          onClick={() => updateQuantity(item.id, Math.max(0, item.quantity - 1))}
-                        >
-                          -
-                        </button>
-                        <span className="cart-quantity">{item.quantity}</span>
-                        <button
-                          className="cart-quantity-btn"
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        >
-                          +
-                        </button>
+                        <div className="cart-quantity-controls">
+                          <button
+                            className="cart-quantity-btn"
+                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          >
+                            -
+                          </button>
+                          <span className="cart-quantity">{item.quantity}</span>
+                          <button
+                            className="cart-quantity-btn"
+                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          >
+                            +
+                          </button>
+                        </div>
                         <button
                           className="cart-remove-btn"
                           onClick={() => removeFromCart(item.id)}
+                          title="移除商品"
                         >
                           ×
                         </button>
@@ -89,10 +100,11 @@ const Cart: React.FC = () => {
                   <button
                     className="cart-checkout-btn"
                     onClick={() => {
-                      alert('即将跳转到结账页面');
+                      alert('即将跳转到订单页面');
+                      setIsOpen(false);
                     }}
                   >
-                    结账
+                    立即下单
                   </button>
                 </div>
               </>

@@ -4,6 +4,8 @@ interface CartItem {
   id: number;
   name: string;
   price: string;
+  numericPrice: number;
+  image: string;
   quantity: number;
 }
 
@@ -38,6 +40,10 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   const updateQuantity = (id: number, quantity: number) => {
+    if (quantity <= 0) {
+      removeFromCart(id);
+      return;
+    }
     setItems(currentItems =>
       currentItems.map(item =>
         item.id === id ? { ...item, quantity } : item
@@ -48,8 +54,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
 
   const totalPrice = items.reduce((sum, item) => {
-    const price = parseFloat(item.price.replace('¥', ''));
-    return sum + price * item.quantity;
+    return sum + item.numericPrice * item.quantity;
   }, 0);
 
   return (
