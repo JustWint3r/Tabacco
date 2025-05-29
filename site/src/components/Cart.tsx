@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../lib/CartContext';
 
 const Cart: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { items, totalItems, totalPrice, updateQuantity, removeFromCart } = useCart();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -100,7 +102,7 @@ const Cart: React.FC = () => {
                   <button
                     className="cart-checkout-btn"
                     onClick={() => {
-                      alert('即将跳转到订单页面');
+                      navigate('/checkout');
                       setIsOpen(false);
                     }}
                   >
