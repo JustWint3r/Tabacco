@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from '../lib/CartContext';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 const CheckoutPage: React.FC = () => {
   const { items, totalPrice, updateQuantity, removeFromCart, clearCart } = useCart();
@@ -47,6 +48,7 @@ const CheckoutPage: React.FC = () => {
   if (items.length === 0) {
     return (
       <div className="checkout-page">
+        <Header />
         <div className="container">
           <div className="checkout-header">
             <button 
@@ -81,6 +83,7 @@ const CheckoutPage: React.FC = () => {
 
   return (
     <div className="checkout-page">
+      <Header />
       <div className="container">
         <div className="checkout-header">
           <button 
@@ -181,6 +184,24 @@ const CheckoutPage: React.FC = () => {
           </div>
 
           <div className="checkout-sidebar">
+            <div className="payment-methods">
+              <h4>支付方式</h4>
+              <div className="payment-options">
+                <div className="payment-option">
+                  <span>💳</span>
+                  <span>支付宝</span>
+                </div>
+                <div className="payment-option">
+                  <span>💰</span>
+                  <span>微信支付</span>
+                </div>
+                <div className="payment-option">
+                  <span>🏦</span>
+                  <span>银行转账</span>
+                </div>
+              </div>
+            </div>
+
             <div className="cart-totals">
               <h3 className="totals-title">购物车总计</h3>
               
@@ -216,24 +237,6 @@ const CheckoutPage: React.FC = () => {
               >
                 立即下单
               </button>
-            </div>
-
-            <div className="payment-methods">
-              <h4>支付方式</h4>
-              <div className="payment-options">
-                <div className="payment-option">
-                  <span>💳</span>
-                  <span>支付宝</span>
-                </div>
-                <div className="payment-option">
-                  <span>💰</span>
-                  <span>微信支付</span>
-                </div>
-                <div className="payment-option">
-                  <span>🏦</span>
-                  <span>银行转账</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
