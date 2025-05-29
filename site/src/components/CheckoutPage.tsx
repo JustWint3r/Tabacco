@@ -197,7 +197,7 @@ const CheckoutPage: React.FC = () => {
                 </div>
                 <div className="payment-option">
                   <span>🏦</span>
-                  <span>银行转账</span>
+                  <span>QR支付</span>image.png
                 </div>
               </div>
             </div>
