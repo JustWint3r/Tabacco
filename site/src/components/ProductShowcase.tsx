@@ -83,11 +83,13 @@ const ProductShowcase: React.FC = () => {
           <div key={product.id} className="product-card">
             <img src={product.image} alt={product.name} />
             <div className="product-info">
-              <h3>{product.name}</h3>
-              <p>{product.description}</p>
-              <div className="product-price">{product.price}</div>
+              <div className="product-details">
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <div className="product-price">{product.price}</div>
+              </div>
               <button 
-                className="btn w-full mt-4"
+                className="btn"
                 onClick={() => handleAddToCart(product)}
               >
                 立即选购

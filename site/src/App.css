@@ -144,18 +144,27 @@ a:hover {
 
 .product-info {
   padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
-.product-info h3 {
-  margin: 0 0 0.5rem 0;
+.product-details {
+  flex: 1;
+  text-align: left;
+}
+
+.product-details h3 {
+  margin: 0 0 0.3rem 0;
   font-size: 1.25rem;
   color: var(--primary);
   font-weight: 600;
 }
 
-.product-info p {
+.product-details p {
   color: rgba(245, 245, 245, 0.8);
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
   font-size: 0.9rem;
   line-height: 1.4;
 }
@@ -163,7 +172,7 @@ a:hover {
 .product-price {
   font-weight: bold;
   color: var(--primary);
-  margin: 0.5rem 0 1rem 0;
+  margin: 0;
   font-size: 1.2rem;
 }
 
@@ -171,16 +180,17 @@ a:hover {
   display: inline-block;
   background-color: var(--primary);
   color: var(--text-dark);
-  padding: 0.5rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
   text-decoration: none;
-  width: 100%;
   text-align: center;
   box-sizing: border-box;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .product-info .btn:hover {
@@ -1101,6 +1111,20 @@ a:hover {
   .product-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1.5rem;
+  }
+  
+  .product-info {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .product-details {
+    text-align: center;
+  }
+  
+  .product-info .btn {
+    width: 100%;
   }
   
   .section-title {
