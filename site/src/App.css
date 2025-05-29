@@ -376,12 +376,15 @@ a:hover {
   right: 20px;
   background-color: var(--primary);
   color: var(--text-dark);
-  padding: 1rem 1.5rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   animation: fadeInUp 0.3s ease-out;
   font-weight: 600;
+  font-size: 0.9rem;
+  max-width: 280px;
+  word-wrap: break-word;
 }
 
 /* Cart Icon and Badge */
