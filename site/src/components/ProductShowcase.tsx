@@ -101,7 +101,16 @@ const ProductShowcase: React.FC = () => {
       
       {/* Notification */}
       {notification && (
-        <div className="cart-notification">
+        <div 
+          className="cart-notification"
+          style={{
+            position: 'fixed',
+            bottom: '30px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 1000
+          }}
+        >
           {notification}
         </div>
       )}
