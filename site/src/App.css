@@ -1344,6 +1344,11 @@ a:hover {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.form-group select option {
+  background-color: white;
+  color: black;
+}
+
 .apartment-input {
   margin-top: 8px;
 }
