@@ -20,7 +20,8 @@ const BillingPage: React.FC = () => {
     phone: '',
     email: '',
     orderNotes: '',
-    shipToDifferent: false
+    wechatPay: false,
+    qqPay: false
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -32,6 +33,12 @@ const BillingPage: React.FC = () => {
   };
 
   const handlePlaceOrder = () => {
+    // Validate that at least one payment method is selected
+    if (!formData.wechatPay && !formData.qqPay) {
+      alert('请选择至少一种支付方式（微信支付或QQ支付）');
+      return;
+    }
+    
     // Here you would typically submit the order to your backend
     alert('订单已提交！我们会尽快与您联系确认支付详情。');
     clearCart();
@@ -185,24 +192,39 @@ const BillingPage: React.FC = () => {
                   />
                 </div>
 
-                <div className="shipping-checkbox">
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="shipToDifferent"
-                      checked={formData.shipToDifferent}
-                      onChange={handleInputChange}
-                    />
-                    配送到不同地址？
-                  </label>
+                <div className="form-group">
+                  <label>支付方式 <span className="required">*</span></label>
+                  <div className="shipping-checkbox">
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="wechatPay"
+                        checked={formData.wechatPay}
+                        onChange={handleInputChange}
+                      />
+                      微信支付
+                    </label>
+                  </div>
+
+                  <div className="shipping-checkbox">
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="qqPay"
+                        checked={formData.qqPay}
+                        onChange={handleInputChange}
+                      />
+                      QQ支付
+                    </label>
+                  </div>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="orderNotes">订单备注（可选）</label>
+                  <label htmlFor="orderNotes">订单备注</label>
                   <textarea
                     id="orderNotes"
                     name="orderNotes"
-                    placeholder="关于您订单的备注，例如配送的特殊说明。"
+                    placeholder="请填写您的微信/QQ号。"
                     value={formData.orderNotes}
                     onChange={handleInputChange}
                     rows={4}
