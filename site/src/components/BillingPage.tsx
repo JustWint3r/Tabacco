@@ -195,7 +195,7 @@ const BillingPage: React.FC = () => {
                   <label>支付方式 <span className="required">*</span></label>
                   <div className="payment-methods-container">
                     <div className="shipping-checkbox">
-                      <label>
+                      <label className="payment-option-wechat">
                         <input
                           type="radio"
                           name="paymentMethod"
@@ -208,7 +208,7 @@ const BillingPage: React.FC = () => {
                     </div>
 
                     <div className="shipping-checkbox">
-                      <label>
+                      <label className="payment-option-qq">
                         <input
                           type="radio"
                           name="paymentMethod"
