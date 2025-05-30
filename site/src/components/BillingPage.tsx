@@ -32,9 +32,29 @@ const BillingPage: React.FC = () => {
   };
 
   const handlePlaceOrder = () => {
-    // Validate that at least one payment method is selected
-    if (!formData.paymentMethod) {
-      alert('请选择支付方式');
+    // Validate all required fields
+    const requiredFields = {
+      firstName: '姓名',
+      lastName: '姓氏', 
+      country: '国家/地区',
+      streetAddress: '街道地址',
+      city: '城镇/城市',
+      state: '省份/州',
+      postcode: '邮政编码/ZIP',
+      phone: '电话',
+      email: '电子邮件地址',
+      paymentMethod: '支付方式'
+    };
+
+    const emptyFields = [];
+    for (const [field, label] of Object.entries(requiredFields)) {
+      if (!formData[field as keyof typeof formData]) {
+        emptyFields.push(label);
+      }
+    }
+
+    if (emptyFields.length > 0) {
+      alert(`请填写以下必填字段：${emptyFields.join('、')}`);
       return;
     }
     
