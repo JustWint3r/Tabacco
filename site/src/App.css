@@ -1375,19 +1375,19 @@ a:hover {
 }
 
 .payment-option-wechat {
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJTNi40NzcgMjIgMTIgMjJTMjIgMTcuNTIzIDIyIDEyUzE3LjUyMyAyIDEyIDJaTTEwLjUgOUMxMS4zMjggOSAxMiA5LjY3MiAxMiAxMC41UzExLjMyOCAxMiAxMC41IDEyUzkgMTEuMzI4IDkgMTAuNVM5LjY3MiA5IDEwLjUgOVpNMTMuNSA5QzE0LjMyOCA5IDE1IDkuNjcyIDE1IDEwLjVTMTQuMzI4IDEyIDEzLjUgMTJTMTIgMTEuMzI4IDEyIDEwLjVTMTIuNjcyIDkgMTMuNSA5Wk03IDE0QzguMzgxIDE2LjUgMTAuOTA5IDE4IDEyIDE4UzE1LjYxOSAxNi41IDE3IDE0SDdaIiBmaWxsPSIjMDlCMDNGIi8+Cjwvc3ZnPgo=');
+  background-image: url('../assets/images/wechat-pay.png');
   background-repeat: no-repeat;
   background-position: left center;
-  background-size: 20px 20px;
-  padding-left: 30px;
+  background-size: 24px 24px;
+  padding-left: 35px;
 }
 
 .payment-option-qq {
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJTNi40NzcgMjIgMTIgMjJTMjIgMTcuNTIzIDIyIDEyUzE3LjUyMyAyIDEyIDJaTTEwIDhDMTAuNTUyIDggMTEgOC40NDggMTEgOVM5LjU1MiAxMCAxMCAxMEg5QzguNDQ4IDEwIDggOS41NTIgOCA5UzguNDQ4IDggOSA4SDEwWk0xNSA4QzE1LjU1MiA4IDE2IDguNDQ4IDE2IDlTMTUuNTUyIDEwIDE1IDEwSDE0QzEzLjQ0OCAxMCAxMyA5LjU1MiAxMyA5UzEzLjQ0OCA4IDE0IDhIMTVaTTcuNSAxNEM4LjMyOCAxNCAxMCAxNSAxMiAxNVMxNS42NzIgMTQgMTYuNSAxNEg3LjVaIiBmaWxsPSIjRkZBNTAwIi8+Cjwvc3ZnPgo=');
+  background-image: url('../assets/images/qq-pay.png');
   background-repeat: no-repeat;
   background-position: left center;
-  background-size: 20px 20px;
-  padding-left: 30px;
+  background-size: 24px 24px;
+  padding-left: 35px;
 }
 
 .shipping-checkbox label {
