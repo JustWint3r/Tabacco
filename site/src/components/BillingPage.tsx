@@ -20,8 +20,7 @@ const BillingPage: React.FC = () => {
     phone: '',
     email: '',
     orderNotes: '',
-    wechatPay: false,
-    qqPay: false
+    paymentMethod: ''
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -34,8 +33,8 @@ const BillingPage: React.FC = () => {
 
   const handlePlaceOrder = () => {
     // Validate that at least one payment method is selected
-    if (!formData.wechatPay && !formData.qqPay) {
-      alert('请选择至少一种支付方式（微信支付或QQ支付）');
+    if (!formData.paymentMethod) {
+      alert('请选择支付方式');
       return;
     }
     
@@ -197,9 +196,10 @@ const BillingPage: React.FC = () => {
                   <div className="shipping-checkbox">
                     <label>
                       <input
-                        type="checkbox"
-                        name="wechatPay"
-                        checked={formData.wechatPay}
+                        type="radio"
+                        name="paymentMethod"
+                        value="wechatPay"
+                        checked={formData.paymentMethod === 'wechatPay'}
                         onChange={handleInputChange}
                       />
                       微信支付
@@ -209,9 +209,10 @@ const BillingPage: React.FC = () => {
                   <div className="shipping-checkbox">
                     <label>
                       <input
-                        type="checkbox"
-                        name="qqPay"
-                        checked={formData.qqPay}
+                        type="radio"
+                        name="paymentMethod"
+                        value="qqPay"
+                        checked={formData.paymentMethod === 'qqPay'}
                         onChange={handleInputChange}
                       />
                       QQ支付
