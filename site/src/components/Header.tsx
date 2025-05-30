@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import Cart from './Cart';
 
@@ -8,7 +9,9 @@ const Header: React.FC = () => {
       <div className="container">
         <div className="flex justify-between items-center">
           <div className="logo">
-            <img src={logo} alt="Tobacco Shop Logo" style={{ height: '60px' }} />
+            <Link to="/">
+              <img src={logo} alt="Tobacco Shop Logo" style={{ height: '60px', cursor: 'pointer' }} />
+            </Link>
           </div>
           <nav className="flex items-center">
             <ul className="nav-menu">
