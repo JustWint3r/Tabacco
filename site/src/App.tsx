@@ -8,6 +8,7 @@ import PaymentSection from './components/PaymentSection';
 import CustomerService from './components/CustomerService';
 import Footer from './components/Footer';
 import CheckoutPage from './components/CheckoutPage';
+import BillingPage from './components/BillingPage';
 import { CartProvider } from './lib/CartContext';
 
 const HomePage: React.FC = () => {
@@ -33,6 +34,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/billing" element={<BillingPage />} />
           </Routes>
         </div>
       </Router>

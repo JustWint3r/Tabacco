@@ -38,11 +38,8 @@ const CheckoutPage: React.FC = () => {
       return;
     }
     
-    // Here you would typically integrate with a payment processor
-    alert('即将跳转到支付页面...');
-    // For demo purposes, we'll clear the cart and redirect
-    clearCart();
-    navigate('/');
+    // Navigate to billing page
+    navigate('/billing');
   };
 
   if (items.length === 0) {
@@ -188,16 +185,8 @@ const CheckoutPage: React.FC = () => {
               <h4>支付方式</h4>
               <div className="payment-options">
                 <div className="payment-option">
-                  <span>💳</span>
-                  <span>支付宝</span>
-                </div>
-                <div className="payment-option">
                   <span>💰</span>
-                  <span>微信支付</span>
-                </div>
-                <div className="payment-option">
-                  <span>🏦</span>
-                  <span>QR支付</span>
+                  <span>手动支付</span>
                 </div>
               </div>
             </div>
