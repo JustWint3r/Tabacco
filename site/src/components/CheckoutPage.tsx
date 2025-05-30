@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 
 const CheckoutPage: React.FC = () => {
-  const { items, totalPrice, updateQuantity, removeFromCart, clearCart } = useCart();
+  const { items, totalPrice, updateQuantity, removeFromCart } = useCart();
   const navigate = useNavigate();
   const [couponCode, setCouponCode] = useState('');
   const [appliedCoupon, setAppliedCoupon] = useState<{ code: string; discount: number } | null>(null);
