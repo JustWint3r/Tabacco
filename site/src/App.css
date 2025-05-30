@@ -1360,6 +1360,16 @@ a:hover {
   margin: 20px 0;
 }
 
+.payment-methods-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.payment-methods-container .shipping-checkbox {
+  margin: 10px 0;
+}
+
 .shipping-checkbox label {
   display: flex;
   align-items: center;

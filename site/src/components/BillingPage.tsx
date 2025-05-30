@@ -193,30 +193,32 @@ const BillingPage: React.FC = () => {
 
                 <div className="form-group">
                   <label>支付方式 <span className="required">*</span></label>
-                  <div className="shipping-checkbox">
-                    <label>
-                      <input
-                        type="radio"
-                        name="paymentMethod"
-                        value="wechatPay"
-                        checked={formData.paymentMethod === 'wechatPay'}
-                        onChange={handleInputChange}
-                      />
-                      微信支付
-                    </label>
-                  </div>
+                  <div className="payment-methods-container">
+                    <div className="shipping-checkbox">
+                      <label>
+                        <input
+                          type="radio"
+                          name="paymentMethod"
+                          value="wechatPay"
+                          checked={formData.paymentMethod === 'wechatPay'}
+                          onChange={handleInputChange}
+                        />
+                        微信支付
+                      </label>
+                    </div>
 
-                  <div className="shipping-checkbox">
-                    <label>
-                      <input
-                        type="radio"
-                        name="paymentMethod"
-                        value="qqPay"
-                        checked={formData.paymentMethod === 'qqPay'}
-                        onChange={handleInputChange}
-                      />
-                      QQ支付
-                    </label>
+                    <div className="shipping-checkbox">
+                      <label>
+                        <input
+                          type="radio"
+                          name="paymentMethod"
+                          value="qqPay"
+                          checked={formData.paymentMethod === 'qqPay'}
+                          onChange={handleInputChange}
+                        />
+                        QQ支付
+                      </label>
+                    </div>
                   </div>
                 </div>
 
