@@ -42,6 +42,7 @@
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
     "embla-carousel-react": "^8.0.0-rc14",
+    "googleapis": "^149.0.0",
     "input-otp": "^1.1.0",
     "lucide-react": "^0.294.0",
     "next-themes": "^0.2.1",

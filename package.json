@@ -1,0 +1,11 @@
+{
+  "name": "tabacco-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Tabacco shop order management",
+  "dependencies": {
+    "googleapis": "^142.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 

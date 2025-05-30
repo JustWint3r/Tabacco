@@ -31,7 +31,7 @@ const BillingPage: React.FC = () => {
     }));
   };
 
-  const handlePlaceOrder = () => {
+  const handlePlaceOrder = async () => {
     // Validate all required fields
     const requiredFields = {
       firstName: '姓名',
@@ -57,11 +57,40 @@ const BillingPage: React.FC = () => {
       alert(`请填写以下必填字段：${emptyFields.join('、')}`);
       return;
     }
-    
-    // Here you would typically submit the order to your backend
-    alert('订单已提交！我们会尽快与您联系确认支付详情。');
-    clearCart();
-    navigate('/');
+
+    try {
+      // Prepare order data for submission
+      const orderData = {
+        ...formData,
+        items,
+        subtotal: totalPrice,
+        shipping: shippingCost,
+        total: total
+      };
+
+      // Submit to our API
+      const response = await fetch('/api/submit-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderData)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert('订单已成功提交到系统！华盛哥会尽快与您联系确认支付详情。');
+        clearCart();
+        navigate('/');
+      } else {
+        alert('提交订单时出现错误，请稍后重试或联系客服。');
+        console.error('Order submission failed:', result.message);
+      }
+    } catch (error) {
+      alert('提交订单时出现网络错误，请检查网络连接后重试。');
+      console.error('Network error:', error);
+    }
   };
 
   const subtotal = totalPrice;
