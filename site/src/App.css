@@ -1375,7 +1375,7 @@ a:hover {
 }
 
 .payment-option-wechat {
-  background-image: url('../assets/images/wechat-pay.png');
+  background-image: url('/images/wechat-pay.png');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 24px 24px;
@@ -1383,7 +1383,7 @@ a:hover {
 }
 
 .payment-option-qq {
-  background-image: url('../assets/images/qq-pay.png');
+  background-image: url('/images/qq-pay.png');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 24px 24px;
