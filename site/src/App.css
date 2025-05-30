@@ -1383,7 +1383,7 @@ a:hover {
 }
 
 .payment-option-qq {
-  background-image: url('/images/qq-pay.png');
+  background-image: url('/images/qq-pay.png?v=2');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 24px 24px;
