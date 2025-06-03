@@ -16,7 +16,7 @@ const Header: React.FC = () => {
           <nav className="flex items-center">
             <ul className="nav-menu">
               <li><a href="#products">商店</a></li>
-              <li><a href="#hand-roll">手卷</a></li>
+              <li><Link to="/hand-roll">手卷</Link></li>
               <li><a href="#tobacco">斗丝</a></li>
               <li><a href="#accessories">耗材</a></li>
               <li><a href="#cigars">雪茄</a></li>

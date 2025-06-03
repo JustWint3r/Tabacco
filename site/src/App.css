@@ -1572,3 +1572,26 @@ a:hover {
     padding: 15px 20px;
   }
 }
+
+/* Hand Roll Page Styles */
+.hand-roll-page {
+  min-height: 100vh;
+  background-color: #000;
+  color: white;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.brand-card:hover {
+  border-color: #D4AF37 !important;
+  transform: translateY(-5px) !important;
+}
+
+.product-table-container table tbody tr:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+}

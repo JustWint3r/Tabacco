@@ -8,6 +8,7 @@ import CustomerService from './components/CustomerService';
 import Footer from './components/Footer';
 import CheckoutPage from './components/CheckoutPage';
 import BillingPage from './components/BillingPage';
+import HandRollPage from './components/HandRollPage';
 import { CartProvider } from './lib/CartContext';
 
 const HomePage: React.FC = () => {
@@ -31,6 +32,7 @@ const App: React.FC = () => {
         <div className="App">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/hand-roll" element={<HandRollPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/billing" element={<BillingPage />} />
           </Routes>
